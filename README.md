@@ -23,7 +23,7 @@ else:
 
 # Question 3: 
 # Design a program: randomize an integer from 1 to 10, and let users guess what it is. If users' guess is right, print "Good Luck You!", otherwise print "Oh sorry it's too large/small!", then let users input again and remind users "you have n chances left!". Maximum 3 chances.
-# Answer 3:
+# Answer 3A:
 import random
 temp1 = random.randint(1,10)
 temp2 = int(input("Please input an integer between 1 and 10, you have 3 chances:"))
@@ -86,3 +86,23 @@ while number:
         j = j - 1
     print()
     number = number - 1
+    
+    # Question 5:
+    # Design a program to judge whether a particular year is a leap year.
+    # Anaswer 5:
+    Judge = 'Y'
+while (Judge=='Y') or (Judge=='y'):
+    temp = input("Please input year:")
+    while not temp.isdigit():
+        temp = input("Sorry! Incorrect input. Please input an integer:")
+    year=int(temp)
+    if year/400 == int(year/400):
+        print(temp + " is a leap year!")
+    else:
+        if year/4 == int(year/4):
+            print(temp + " is a leap year!")
+        else:
+            print(temp + " is NOT a leap year!")
+    Judge = input("Go on or not? Y/N:")
+    
+print("User has terminated the program.")
