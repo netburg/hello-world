@@ -1,4 +1,4 @@
-# Hello-world!<br> 
+# Hello, world!<br> 
 This is my first repository, my first try.   
 I am new to this coding world. All I did before was accounting, financial analysis and MBA stuff.    
 Now I am determined to be a skilled computer master.    
@@ -16,14 +16,16 @@ print("Hello, {}".format(x))
 Design a program that asks users to input numbers between 1 to 100, and print "Good choice" if they did so, otherwise print "Please think for a while"
 ## Answer 2: 
 number1=int(input("Please input a number between 1 and 100:"))   
-if 1<=number1<=100:   
-&nbsp;&nbsp;&nbsp;&nbsp;print("Good choice")    
-else:  
-&nbsp; &nbsp; print("Please think for a while")  
+if 1<=number1<=100:  
 
-# Question 3: 
-# Design a program: randomize an integer from 1 to 10, and let users guess what it is. If users' guess is right, print "Good Luck You!", otherwise print "Oh sorry it's too large/small!", then let users input again and remind users "you have n chances left!". Maximum 3 chances.
-# Answer 3A:
+    print("Good choice")    
+else: 
+
+    print("Please think for a while")  
+
+## Question 3: 
+Design a program: randomize an integer from 1 to 10, and let users guess what it is. If users' guess is right, print "Good Luck You!", otherwise print "Oh sorry it's too large/small!", then let users input again and remind users "you have n chances left!". Maximum 3 chances.
+## Answer 3A:
 import random   
 temp1 = random.randint(1,10)   
 temp2 = int(input("Please input an integer between 1 and 10, you have 3 chances:"))     
@@ -50,33 +52,37 @@ while i:
             i=0   
 print('Game Over')   
 
-# Question 4:
-# Let users input an positive integer and list all the positive integers less than or equal to this one. Each listed integer is in one line.
-# Answer 4:
+## Question 4:
+Let users input an positive integer and list all the positive integers less than or equal to this one. Each listed integer is in one line.
+## Answer 4:
 temp = int(input("Please input an positive integer:"))    
 i=1    
-while temp:   
+while temp:
+
     print(i)    
     i+=1   
     temp-=1   
     
-# Question 5
-# Let users input a positive integer and draw a picture as following:(for example users input 5)
+## Question 5
+Let users input a positive integer and draw a picture as following:(for example users input 5)
     
     *****   
    ****   
   ***   
  **   
 *   
-# Answer 5
+## Answer 5
+
 temp = int(input("Please input a positive integer:"))   
 while temp:   
+    
     print(" " * (temp-1) + '*'* temp)   
     temp-=1   
-# A more complicated version of Answer 5:
+## A more complicated version of Answer 5:
 temp = input("Please input a positive integer:")   
 number = int(temp)   
 while number:   
+    
     i = number - 1   
     while i:</br>
         print(' ', end = '')   
@@ -88,10 +94,10 @@ while number:
     print()   
     number = number - 1   
     
-    # Question 5:
-    # Design a program to judge whether a particular year is a leap year.
-    # Anaswer 5:
-    Judge = 'Y'
+## Question 5:
+Design a program to judge whether a particular year is a leap year.
+## Anaswer 5:
+Judge = 'Y'
 while (Judge=='Y') or (Judge=='y'):   
     temp = input("Please input year:")   
     while not temp.isdigit():   
