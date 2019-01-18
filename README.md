@@ -1,6 +1,6 @@
 # hello-world
 This is my first repository, my first try.  
-I am new to this coding world. All I did before was accounting, financial analysis and so on.
+I am new to this coding world. All I did before was accounting, financial analysis and so on.</br>
 Now I am determined to be a skilled computer master.
 
 # 17/01/2019
