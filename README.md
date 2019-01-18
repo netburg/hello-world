@@ -97,7 +97,7 @@ while number:
 ## Question 6:
 Design a program to judge whether a particular year is a leap year.
 ## Anaswer 6:
-Judge = 'Y'
+Judge = 'Y'    
 while (Judge=='Y') or (Judge=='y'):   
 
     temp = input("Please input year:")   
