@@ -1,5 +1,5 @@
 This is my second branch, mainly includes my exercises.  
-Get to know me by clicking the below link:
+Get to know me by clicking this link:
 [My LinkIn](https://www.linkedin.com/in/jin-zhang-412b8516b/)
 
 # 17/01/2019
