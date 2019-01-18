@@ -67,12 +67,12 @@ while temp:
   ***
  **
 *
-# Answer 4
+# Answer 5
 temp = int(input("Please input a positive integer:"))
 while temp:
     print(" " * (temp-1) + '*'* temp)
     temp-=1
-# A more complicated version of Answer 4:
+# A more complicated version of Answer 5:
 temp = input("Please input a positive integer:")
 number = int(temp)
 while number:
