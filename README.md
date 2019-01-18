@@ -1,11 +1,10 @@
-# hello-world 
+# Hello-world! 
 This is my first repository, my first try.   
-I am new to this coding world. All I did before was accounting, financial analysis and so on.    
+I am new to this coding world. All I did before was accounting, financial analysis and MBA stuff.    
 Now I am determined to be a skilled computer master.    
 [My LinkIn](https://www.linkedin.com/in/jin-zhang-412b8516b/)
 
 # 17/01/2019
-
 ## Question 1: 
 Design a program that asks users to input their name and print"Hello, name!"
 ## Answer 1: 
@@ -18,7 +17,7 @@ Design a program that asks users to input numbers between 1 to 100, and print "G
 ## Answer 2: 
 number1=int(input("Please input a number between 1 and 100:"))   
 if 1<=number1<=100:   
-print("Good choice")    
+<<<<print("Good choice")    
 else:  
     print("Please think for a while")  
 
