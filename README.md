@@ -49,3 +49,40 @@ while i:
             print("No chances left!")
             i=0
 print('Game Over')
+
+# Question 4:
+# Let users input an positive integer and list all the positive integers less than or equal to this one. Each listed integer is in one line.
+# Answer 4:
+temp = int(input("Please input an positive integer:"))
+i=1
+while temp:
+    print(i)
+    i+=1
+    temp-=1
+    
+# Question 5
+# Let users input a positive integer and draw a picture as following:(for example users input 5)
+    *****
+   **** 
+  ***
+ **
+*
+# Answer 4
+temp = int(input("Please input a positive integer:"))
+while temp:
+    print(" " * (temp-1) + '*'* temp)
+    temp-=1
+# A more complicated version of Answer 4:
+temp = input("Please input a positive integer:")
+number = int(temp)
+while number:
+    i = number - 1
+    while i:
+        print(' ', end = '')
+        i = i - 1
+    j = number
+    while j:
+        print('*', end = '')
+        j = j - 1
+    print()
+    number = number - 1
