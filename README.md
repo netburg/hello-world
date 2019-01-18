@@ -107,3 +107,11 @@ Design a program to judge whether a particular year is a leap year.
         Judge = input("Go on or not? Y/N:")   
 
     print("User has terminated the program.")   
+
+## Question 7
+There is a long ladder, if you take 2 steps each time, and finally 1 step left;If once take 3 steps, you end up with 2 steps ;If 5 steps each time, 4 steps left.If 6 steps a time, you end up with 5 steps left. If you take 7 steps each time, you finish climbing with no steps left. How many steps does the ladder have?
+## Answer 7A
+    i=1
+    while not ((i%2==1) and (i%3==2) and (i%5==4) and (i%6==5) and (i%7==0)):
+    i+=1
+    print(i)
