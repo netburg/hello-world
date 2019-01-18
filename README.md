@@ -1,5 +1,4 @@
-<pre>
-# Hello-world! 
+# Hello-world!<br> 
 This is my first repository, my first try.   
 I am new to this coding world. All I did before was accounting, financial analysis and MBA stuff.    
 Now I am determined to be a skilled computer master.    
@@ -18,9 +17,9 @@ Design a program that asks users to input numbers between 1 to 100, and print "G
 ## Answer 2: 
 number1=int(input("Please input a number between 1 and 100:"))   
 if 1<=number1<=100:   
-<<<<print("Good choice")    
+&nbsp;&nbsp;&nbsp;&nbsp;print("Good choice")    
 else:  
-    print("Please think for a while")  
+&nbsp; &nbsp; print("Please think for a while")  
 
 # Question 3: 
 # Design a program: randomize an integer from 1 to 10, and let users guess what it is. If users' guess is right, print "Good Luck You!", otherwise print "Oh sorry it's too large/small!", then let users input again and remind users "you have n chances left!". Maximum 3 chances.
@@ -108,4 +107,3 @@ while (Judge=='Y') or (Judge=='y'):
     Judge = input("Go on or not? Y/N:")   
     
 print("User has terminated the program.")   
-</pre>
