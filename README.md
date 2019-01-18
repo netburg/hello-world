@@ -93,10 +93,10 @@ while number:
         j = j - 1   
     print()   
     number = number - 1   
-    
-## Question 5:
+# 18/01/2019    
+## Question 6:
 Design a program to judge whether a particular year is a leap year.
-## Anaswer 5:
+## Anaswer 6:
 Judge = 'Y'
 while (Judge=='Y') or (Judge=='y'):   
     temp = input("Please input year:")   
