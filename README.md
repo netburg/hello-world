@@ -66,10 +66,10 @@ while temp:
 ## Question 5
 Let users input a positive integer and draw a picture as following:(for example users input 5)
     
-    *****   
-   ****   
-  ***   
- **   
+&nbsp;&nbsp;&nbsp;&nbsp;*****   
+&nbsp;&nbsp;&nbsp;****   
+&nbsp;&nbsp;***   
+&nbsp;**   
 *   
 ## Answer 5
 
@@ -99,6 +99,7 @@ Design a program to judge whether a particular year is a leap year.
 ## Anaswer 6:
 Judge = 'Y'
 while (Judge=='Y') or (Judge=='y'):   
+
     temp = input("Please input year:")   
     while not temp.isdigit():   
         temp = input("Sorry! Incorrect input. Please input an integer:")   
