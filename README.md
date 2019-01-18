@@ -1,3 +1,4 @@
+<pre>
 # Hello-world! 
 This is my first repository, my first try.   
 I am new to this coding world. All I did before was accounting, financial analysis and MBA stuff.    
@@ -107,4 +108,4 @@ while (Judge=='Y') or (Judge=='y'):
     Judge = input("Go on or not? Y/N:")   
     
 print("User has terminated the program.")   
-
+</pre>
