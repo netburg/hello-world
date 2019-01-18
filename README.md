@@ -59,11 +59,11 @@ Let users input an positive integer and list all the positive integers less than
     
 ## Question 5
 Let users input a positive integer and draw a picture as following:(for example users input 5)
-    
-    &nbsp;&nbsp;&nbsp;&nbsp;*****   
-    &nbsp;&nbsp;&nbsp;****   
-    &nbsp;&nbsp;***   
-    &nbsp;**   
+         
+        *****   
+       ****   
+      ***   
+     **   
     *   
 ## Answer 5
 
