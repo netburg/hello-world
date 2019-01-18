@@ -113,5 +113,5 @@ There is a long ladder, if you take 2 steps each time, and finally 1 step left;I
 ## Answer 7A
     i=1
     while not ((i%2==1) and (i%3==2) and (i%5==4) and (i%6==5) and (i%7==0)):
-    i+=1
+        i+=1
     print(i)
