@@ -5,16 +5,16 @@ Now I am determined to be a skilled computer master.
 [My LinkIn](https://www.linkedin.com/in/jin-zhang-412b8516b/)
 
 # 17/01/2019
-## Question 1: 
+## Question 1 
 Design a program that asks users to input their name and print"Hello, name!"
-## Answer 1: 
+## Answer 1 
     x=input("Please input your name:")   
     print("Hello, %s"%x)  
     print("Hello, {}".format(x))   
 
-## Question 2: 
+## Question 2 
 Design a program that asks users to input numbers between 1 to 100, and print "Good choice" if they did so, otherwise print "Please think for a while"
-## Answer 2: 
+## Answer 2 
     number1=int(input("Please input a number between 1 and 100:"))   
     if 1<=number1<=100:  
 
@@ -23,9 +23,9 @@ Design a program that asks users to input numbers between 1 to 100, and print "G
 
         print("Please think for a while")  
 
-## Question 3: 
+## Question 3 
 Design a program: randomize an integer from 1 to 10, and let users guess what it is. If users' guess is right, print "Good Luck You!", otherwise print "Oh sorry it's too large/small!", then let users input again and remind users "you have n chances left!". Maximum 3 chances.
-## Answer 3A:
+## Answer 3A
     import random   
     temp1 = random.randint(1,10)   
     temp2 = int(input("Please input an integer between 1 and 10, you have 3 chances:"))     
@@ -47,7 +47,7 @@ Design a program: randomize an integer from 1 to 10, and let users guess what it
                 i=0   
     print('Game Over')   
 
-## Question 4:
+## Question 4
 Let users input an positive integer and list all the positive integers less than or equal to this one. Each listed integer is in one line.
 ## Answer 4:
     temp = int(input("Please input an positive integer:"))    
@@ -88,9 +88,9 @@ Let users input a positive integer and draw a picture as following:(for example 
         print()   
         number = number - 1   
 # 18/01/2019    
-## Question 6:
+## Question 6
 Design a program to judge whether a particular year is a leap year.
-## Anaswer 6:
+## Anaswer 6
     Judge = 'Y'    
     while (Judge=='Y') or (Judge=='y'):   
         temp = input("Please input year:")   
@@ -110,7 +110,7 @@ Design a program to judge whether a particular year is a leap year.
 
 ## Question 7
 There is a long ladder, if you take 2 steps each time, and finally 1 step left;If once take 3 steps, you end up with 2 steps ;If 5 steps each time, 4 steps left.If 6 steps a time, you end up with 5 steps left. If you take 7 steps each time, you finish climbing with no steps left. How many steps does the ladder have?
-## Answer 7A
+## Answer 7
     i=1
     while not ((i%2==1) and (i%3==2) and (i%5==4) and (i%6==5) and (i%7==0)):
         i+=1
