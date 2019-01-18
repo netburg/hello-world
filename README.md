@@ -25,7 +25,7 @@ Design a program that asks users to input numbers between 1 to 100, and print "G
 
 ## Question 3 
 Design a program: randomize an integer from 1 to 10, and let users guess what it is. If users' guess is right, print "Good Luck You!", otherwise print "Oh sorry it's too large/small!", then let users input again and remind users "you have n chances left!". Maximum 3 chances.
-## Answer 3A
+## Answer 3
     import random   
     temp1 = random.randint(1,10)   
     temp2 = int(input("Please input an integer between 1 and 10, you have 3 chances:"))     
