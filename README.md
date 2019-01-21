@@ -248,8 +248,9 @@ Method 2
         if sum == i:
             print(i)
     
-Method 3   
-    def narcissistic_number_1(num):
+Method 3   A general way to find out narcissistic numbers:
+   
+        def narcissistic_number_1(num):
 
         length = len(str(num))
 
