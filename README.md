@@ -219,3 +219,32 @@ Correct. The program is starting...
         print("Incorrerct password!! You have %i times left!"%i, end="")
         temp=input('Please input your password:')
     print("Correct. The program is starting...")
+## Question 16
+An n-digit number that is the sum of the nth powers of its digits is called an n-narcissistic number. It is also sometimes known as an Armstrong number, perfect digital invariant (Madachy 1979), or plus perfect number. Hardy (1993) wrote, "There are just four numbers, after unity, which are the sums of the cubes of their digits: 153=1^3+5^3+3^3,  370=3^3+7^3+0^3, 371=3^3+7^3+1^3, and 407=4^3+0^3+7^3. These are odd facts, very suitable for puzzle columns and likely to amuse amateurs, but there is nothing in them which appeals to the mathematician." Narcissistic numbers therefore generalize these "unappealing" numbers to other powers (Madachy 1979, p. 164).
+The smallest example of a narcissistic number other than the trivial 1-digit numbers is    
+ 153=1^3+5^3+3^3.     
+ Design a program to find out all 3-narcissistic number from 100-999.
+ ## Answer 16
+ Method 1   
+     
+     for a in range(1,10,1):
+        A=100*a
+        for b in range(0,10,1):
+            B=10*b
+            for c in range(0,10,1):
+                C=c
+                i=A+B+C
+                while i==a**3+b**3+c**3:
+                    print(i)
+                    break    
+Method 2   
+
+    for i in range(100, 1000):
+        sum = 0
+        temp = i
+        while temp:
+            sum = sum + (temp%10) ** 3
+            temp //= 10        
+        if sum == i:
+            print(i)
+    
