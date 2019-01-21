@@ -248,3 +248,33 @@ Method 2
         if sum == i:
             print(i)
     
+Method 3   
+    def narcissistic_number_1(num):
+
+        length = len(str(num))
+
+        count = length    
+
+        num_sum = 0    
+
+        while count:        
+
+            num_sum += ((num // 10 ** (count - 1)) % 10) ** length     
+
+            count -= 1    
+
+        else:       
+
+            if num_sum == num:            
+
+                print("%d is %d bit narcissistic_number" % (num, length))
+            else:                        
+                pass
+
+
+    max_num = int(input('Please input your range:'))
+
+
+    for num in range(0, max_num):
+
+        narcissistic_number_1(num)        
