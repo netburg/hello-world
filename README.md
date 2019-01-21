@@ -154,3 +154,36 @@ Rewrite the following codes to make it more efficient.(Using Ternary operators).
         small = z
 ## Answer 11
     small=x if(x<y and x<z) else (y if y<z else z)
+## Question 12
+How many times will "Github" be printed in each of the following situation?
+(1)    
+
+    for i in range(0, 10, 2):  
+        print('Github')
+(2)    
+
+    for i in 5:
+        print('Github')    
+## Answer 12
+(1) 5 "Github"s will be printed, because we start from 0, and grow by 2, so we have: 0, 2, 4, 6, 8 and stop at 10.
+(2) Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\domain-master\practices\hello.py", line 1, in <module>
+    for i in 5:
+TypeError: 'int' object is not iterable
+## Question 13
+(1) What will range(10) generate?    
+(2) What will the following codes print?
+     
+     while True:
+        while True:
+            break
+            print(1)
+        print(2)
+        break
+    print(3)
+## Answer 13
+(1) If you type range(10) in python IDLE, it will generate range(0,10), and if you list(rang(0,10)), you will get: [0,1,2,3,4,5,6,7,8,9]. However, it does not include 10.    
+(2) 2 3 will be printed. Because after break in the inside "while" loop, print(1) will not be executed.    
+
+
+    
