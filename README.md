@@ -124,6 +124,7 @@ It means:
 x=1, y=2, z=3. How to exchange values of x, y, z?
 ## Answer 9
 For example: x, y, z= z, x, y
+# 19/01/2019
 ## Question 10
 In the final example of Baruch College, if your score is between 90 and 100: you get A; between 80 and 90: you get B; between 60 and 80, you get C;  below 60, you get F. According to statistical law, grades is normally distributed, so most students get 60-80. Design an effective program to relize: when you input your score, you get A, B, C, or F printed out.   
 ## Answer 10
@@ -138,6 +139,7 @@ In the final example of Baruch College, if your score is between 90 and 100: you
         print("F")
     else:
         print("Illegal Input!")
+# 20/01/2019
 ## Question 11
 Rewrite the following codes to make it more efficient.(Using Ternary operators).    
     x, y, z = 6, 5, 4    
