@@ -202,10 +202,10 @@ How to make the following codes more efficient?
 ## Question 15
 Please design a program that can realize the following:
 "Please input your password:******   
- Don't input "*", you have 3 times left!Please input your password:***IloveYou   
- Don't input "*", you have 3 times left!Please input your password:okokok   
-Incorrerct password!! You have 2 times left!Please input your password:okfine   
-Incorrerct password!! You have 1 times left!Please input your password:github   
+ Don't input "*", you have 3 times left!Please input your password: ***IloveYou   
+ Don't input "\*", you have 3 times left!Please input your password: okokok   
+Incorrerct password!! You have 2 times left!Please input your password: okfine   
+Incorrerct password!! You have 1 times left!Please input your password: github   
 Correct. The program is starting...   
 ## Answer 15
     temp=input('Please input your password:')
