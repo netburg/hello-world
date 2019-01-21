@@ -138,3 +138,16 @@ In the final example of Baruch College, if your score is between 90 and 100: you
         print("F")
     else:
         print("Illegal Input!")
+## Question 11
+Rewrite the following codes to make it more efficient.(Using Ternary operators).    
+    x, y, z = 6, 5, 4    
+        if x < y:
+        small = x
+    if z < small:
+        small = z
+    elif y < z:
+        small = y
+    else:
+        small = z
+## Answer 11
+    small=x if(x<y and x<z) else (y if y<z else z)
