@@ -141,9 +141,10 @@ In the final example of Baruch College, if your score is between 90 and 100: you
         print("Illegal Input!")
 # 20/01/2019
 ## Question 11
-Rewrite the following codes to make it more efficient.(Using Ternary operators).    
+Rewrite the following codes to make it more efficient.(Using Ternary operators).
+
     x, y, z = 6, 5, 4    
-        if x < y:
+    if x < y:    
         small = x
     if z < small:
         small = z
