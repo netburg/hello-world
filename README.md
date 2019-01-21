@@ -184,6 +184,38 @@ TypeError: 'int' object is not iterable
 ## Answer 13
 (1) If you type range(10) in python IDLE, it will generate range(0,10), and if you list(rang(0,10)), you will get: [0,1,2,3,4,5,6,7,8,9]. However, it does not include 10.    
 (2) 2 3 will be printed. Because after break in the inside "while" loop, print(1) will not be executed.    
-
-
+## Question 14
+How to make the following codes more efficient?  
     
+    i = 0
+    string = 'Github'
+    while i < len(string):
+        print(i)
+        i += 1
+## Answer 14
+    i=0
+    string = 'Github'
+    length = len('Github')
+    while i < length:
+        print(i)
+        i += 1
+## Question 15
+Please design a program that can realize the following:
+"Please input your password:******   
+ Don't input "*", you have 3 times left!Please input your password:***IloveYou   
+ Don't input "*", you have 3 times left!Please input your password:okokok   
+Incorrerct password!! You have 2 times left!Please input your password:okfine   
+Incorrerct password!! You have 1 times left!Please input your password:github   
+Correct. The program is starting...   
+## Answer 15
+    temp=input('Please input your password:')
+    password="github"
+    i=3
+    while "*" in temp:
+        print('Don\'t input "*", you have %d times left!'%i,end="")
+        temp=input('Please input your password:')
+    while (temp!=password) and (i>0):
+        i-=1
+        print("Incorrerct password!! You have %i times left!"%i, end="")
+        temp=input('Please input your password:')
+    print("Correct. The program is starting...")
