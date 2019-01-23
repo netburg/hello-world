@@ -279,3 +279,6 @@ Method 3   A general way to find out narcissistic numbers:
     for num in range(0, max_num):
 
         narcissistic_number_1(num)        
+# 21/01/2019 & 22/02/2019
+Reading a novel: The Three-boday Problem
+# 23/01/2019
