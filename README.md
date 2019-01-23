@@ -285,12 +285,12 @@ Reading a novel: The Three-boday Problem
 ## Question 17
 There are 3 red balls, 3 yellow balls, 6 green balls in one box. Randomly pick 3 balls from the box, how many cases could be ?
 ## Answer 17
-print("No.\tRed\tYellow\tGreen")
-i=0
-for Red in range(0,4):
-    for Yellow in range(0,4):
-        for Green in range(0,7):
-            if Red+Yellow+Green==3:
-                i=i+1
-                print(i,'\t',Red, '\t', Yellow, '\t', Green)
+    print("No.\tRed\tYellow\tGreen")
+    i=0
+    for Red in range(0,4):
+        for Yellow in range(0,4):
+            for Green in range(0,7):
+                if Red+Yellow+Green==3:
+                    i=i+1
+                    print(i,'\t',Red, '\t', Yellow, '\t', Green)
                 
