@@ -304,6 +304,35 @@ Selina
 Helen    
 89   
 ## Answer 18
-    Member=\['Jim',100,'Wendy',98,'Selina',97,'Helen',89]
+    Member=['Jim',100,'Wendy',98,'Selina',97,'Helen',89]
     for each in Member:
         print(each)
+## Question 19
+Change the above result to the following:
+Jim: 100   
+Wendy: 98   
+Selina: 97   
+Helen: 89   
+## Answer 19
+Method 1
+    
+    Member=['Jim',100,'Wendy',98,'Selina',97,'Helen',89]
+    for each in Member:
+        if type(each)==type('a'):
+            print(each+':', end=' ')
+        else:
+            print(each)
+Method 2  
+
+    Member=['Jim',100,'Wendy',98,'Selina',97,'Helen',89]
+    count = 0
+    length = len(Member)
+    while count < length:
+        print(Member[count]+': ',Member[count+1])
+        count += 2
+Method 3   
+
+    Member=['Jim',100,'Wendy',98,'Selina',97,'Helen',89]
+    for each in range(len(Member)):
+        if each%2 == 0:
+            print(Member[each]+": ", Member[each+1])
