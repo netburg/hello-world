@@ -308,7 +308,7 @@ Helen
     for each in Member:
         print(each)
 ## Question 19
-Change the above result to the following:
+Change the above result to the following:    
 Jim: 100   
 Wendy: 98   
 Selina: 97   
