@@ -293,4 +293,17 @@ There are 3 red balls, 3 yellow balls, 6 green balls in one box. Randomly pick 3
                 if Red+Yellow+Green==3:
                     i=i+1
                     print(i,'\t',Red, '\t', Yellow, '\t', Green)
-                
+## Question 18
+if: Member=\['Jim',100,'Wendy',98,'Selina',97,'Helen',89], design a program to print the following:    
+Jim    
+100    
+Wendy    
+98    
+Selina    
+97    
+Helen    
+89   
+## Answer 18
+    Member=\['Jim',100,'Wendy',98,'Selina',97,'Helen',89]
+    for each in Member:
+        print(each)
