@@ -336,3 +336,18 @@ Method 3
     for each in range(len(Member)):
         if each%2 == 0:
             print(Member[each]+": ", Member[each+1])
+#25/01/2019   
+## Question 20
+What does list1 = \[(x, y) for x in range(10) for y in range(10) if x%2==0 if y%2!=0] mean?    
+## Answer 20
+It means:   
+
+    list1=[]
+    for x in range(10):
+        if x%2==0:
+            for y in range(10):
+                if y%2!=0: 
+                    list1.append((x,y))
+    print(list1)
+And it will print:    
+/[(0, 1), (0, 3), (0, 5), (0, 7), (0, 9), (2, 1), (2, 3), (2, 5), (2, 7), (2, 9), (4, 1), (4, 3), (4, 5), (4, 7), (4, 9), (6, 1), (6, 3), (6, 5), (6, 7), (6, 9), (8, 1), (8, 3), (8, 5), (8, 7), (8, 9)]    
