@@ -351,3 +351,19 @@ It means:
     print(list1)
 And it will print:    
 [(0, 1), (0, 3), (0, 5), (0, 7), (0, 9), (2, 1), (2, 3), (2, 5), (2, 7), (2, 9), (4, 1), (4, 3), (4, 5), (4, 7), (4, 9), (6, 1), (6, 3), (6, 5), (6, 7), (6, 9), (8, 1), (8, 3), (8, 5), (8, 7), (8, 9)]    
+## Question 21
+list1=\['1.Just Do It','2.Everything Is Possible','3.Coding Changes the World','4.Impossible Is Nothing']    
+list2=\['4.Adidas','2.Lining','3.Github','1.Nike']
+Design a program that print:    
+1:Nike: Just Do It  
+2.Lining: Everything Is Possible   
+3.Github: Coding Changes the World  
+4.Adidas: Impossible Is Nothing  
+## Answer 21
+
+    list1=['1.Just Do It','2.Everything Is Possible','3.Coding Changes the World','4.Impossible Is Nothing']    
+    list2=['4.Adidas','2.Lining','3.Github','1.Nike']
+    list3=[name+": "+slogan[2:] for slogan in list1 for name in list2 if name[0]==slogan[0]]
+    for each in list3:
+        print(each)
+
