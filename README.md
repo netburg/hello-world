@@ -367,3 +367,15 @@ Design a program that print:
     for each in list3:
         print(each)
 
+# 26/01/2019 Web Deveopment
+## Case 1 Hello world
+    from flask import Flask
+
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():
+        return 'Hello, World!'
+
+    if __name__ =='__main__':
+        app.run(debug=True)
