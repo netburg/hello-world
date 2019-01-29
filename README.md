@@ -433,3 +433,21 @@ Design a program that print:
             return render_template('index.html')
     if __name__= '__main__':
         app.run(debug=True)
+## The  'index.html' involved
+    <!DOCTYPE html>
+    <html lang='en'>
+    <head>
+         <meta charset="UTF-8">
+         <title>Exercise</title>
+    </head>
+    <body>
+        {% if user%}
+            {% <a href="#"> {{user.username}} </a> %}
+            {% <a href="#"> Logout </a> %}
+        {% else %}
+            {% <a href="#"> Login </a> %}
+            {% <a href="#"> Sign up </a> %}
+        {% ednif %}
+    </body>
+    
+    </html>
