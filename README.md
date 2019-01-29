@@ -396,3 +396,10 @@ Design a program that print:
         {% endblock %}
     </body>
     </html>
+# 28/01/2019
+## URL and parameters
+    @app.route('/article/<id>')
+    def article(id):
+        return 'The parameter you request is: s%' %id
+## reverse URL
+    from flask impoort Flask, redirec, url_for
