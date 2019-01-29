@@ -407,11 +407,17 @@ Design a program that print:
     
     @app.route('/')
     def index():
-        login_url=url_for('login')
+        login_url = url_for('login')
         return redirect(login_url)
         return 'This is homepage.'
         
     @app.route('/login/')
     def login():
         return 'This is login page.'
-        
+## test for redirect
+    @app.route('/question/<is_login>/')
+    def question(is_login):
+        if is_login == '1'
+            return 'This is publishing page.'
+        else:
+            return redirect(url_for('login'))
