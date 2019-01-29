@@ -421,3 +421,15 @@ Design a program that print:
             return 'This is publishing page.'
         else:
             return redirect(url_for('login'))
+## IF statement in Web
+    from flask import Flask, render_template
+    app = Flask('__name__')
+    @app.route('/<is_login>')
+    def index(is_login):
+        if login == '1':
+            user = {'username': Jim, 'age': 28, }
+            return render_template('index.html', user = user )
+        else:
+            return render_template('index.html')
+    if __name__= '__main__':
+        app.run(debug=True)
