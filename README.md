@@ -401,5 +401,17 @@ Design a program that print:
     @app.route('/article/<id>')
     def article(id):
         return 'The parameter you request is: s%' %id
-## reverse URL
+## reverse URL and redirect
     from flask impoort Flask, redirec, url_for
+    app = Flask(__name__)
+    
+    @app.route('/')
+    def index():
+        login_url=url_for('login')
+        return redirect(login_url)
+        return 'This is homepage.'
+        
+    @app.route('/login/')
+    def login():
+        return 'This is login page.'
+        
