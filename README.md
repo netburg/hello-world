@@ -460,8 +460,9 @@ Design a program that print:
 
     @app.route('/')
     def index():
-
-        return render_template('index.html')
+        comments=[{'username': 'Jin', 'content': 'Very good.'}, {'username': 'Jim', 'content': 'Not bad.'}]
+        myimage='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
+        return render_template('index.html', comments=comments, myimage=myimage)
 
 
     if __name__ == '__main__':
@@ -475,5 +476,14 @@ Design a program that print:
     </head>
     <body>
         <img src="{{myimage|default('https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1456128855,663055519&fm=58') }}", alt="">
+        <hr>
+        <p>评论数：（{{ comments|length}}）</p>
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <a href="#">{{comment.username}}</a>
+                    <p>{{comment.content}}</p>
+                </li>
+            {% endfor %}
     </body>
     </html>
