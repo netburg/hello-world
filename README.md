@@ -451,3 +451,29 @@ Design a program that print:
     </body>
     
     </html>
+    
+## filter
+    from flask import Flask, render_template
+
+    app = Flask('__name__')
+
+
+    @app.route('/')
+    def index():
+
+        return render_template('index.html')
+
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+        
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>过滤器</title>
+    </head>
+    <body>
+        <img src="{{myimage|default('https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1456128855,663055519&fm=58') }}", alt="">
+    </body>
+    </html>
