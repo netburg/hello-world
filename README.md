@@ -421,6 +421,7 @@ Design a program that print:
             return 'This is publishing page.'
         else:
             return redirect(url_for('login'))
+# 29/01/2019
 ## IF statement in Web
     from flask import Flask, render_template
     app = Flask('__name__')
@@ -451,7 +452,7 @@ Design a program that print:
     </body>
     
     </html>
-    
+# 30/01/2019    
 ## filter
     from flask import Flask, render_template
 
@@ -487,3 +488,32 @@ Design a program that print:
             {% endfor %}
     </body>
     </html>
+# 31/01/2019
+    ## MYSQL
+    from flask import Flask
+    from flask_sqlalchemy import SQLAlchemy
+    import config
+
+    app = Flask('__name__')
+    db = SQLAlchemy(app)
+    app.config.from_object(config)
+
+    # create table article(
+    #     id int primary key autoincrement,
+    #     title varchar(100) not null,
+    #     content text not null,
+    # )
+
+    class Article(db.Model):
+        __tablename__='article'
+        id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+        title = db.Column(db.String(100), nullable=False)
+        content = db.Column(db.Text, nullable=False)
+    db.create_all()
+
+    @app.route('/')
+    def index():
+        article1=Article(title='ITSinger', content='I am Singer0001')
+        db.session.add(article1)
+        db.session.commit()
+        return 'index'
