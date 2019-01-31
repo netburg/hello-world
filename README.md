@@ -544,7 +544,7 @@ Design a program that print:
 
     if __name__ == '__main__':
         app.run(debug=True)
-## confige file
+## Confige file
     # dialect+driver://username:password@host:port/database
     DIALECT = 'mysql'
     DRIVER = 'mysqldb'
