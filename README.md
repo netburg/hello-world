@@ -489,7 +489,7 @@ Design a program that print:
     </body>
     </html>
 # 31/01/2019
-    ## MYSQL
+## MYSQL: add data
     from flask import Flask
     from flask_sqlalchemy import SQLAlchemy
     import config
@@ -544,7 +544,7 @@ Design a program that print:
 
     if __name__ == '__main__':
         app.run(debug=True)
-## Confige file
+## Confige.py
     # dialect+driver://username:password@host:port/database
     DIALECT = 'mysql'
     DRIVER = 'mysqldb'
