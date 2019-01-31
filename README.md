@@ -517,3 +517,42 @@ Design a program that print:
         db.session.add(article1)
         db.session.commit()
         return 'index'
+## Query
+    from flask import Flask
+    from flask_sqlalchemy import SQLAlchemy
+    import config
+
+    app = Flask('__name__')
+    db = SQLAlchemy(app)
+    app.config.from_object(config)
+
+    class Article(db.Model):
+        __tablename__='article'
+        id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+        title = db.Column(db.String(100), nullable=False)
+        content = db.Column(db.Text, nullable=False)
+    db.create_all()
+
+    @app.route('/')
+    def index():
+
+        article11 = Article.query.filter(Article.title=='ITSinger').first()
+        print('title: %s' % article11.title)
+        print('content: %s' % article11.content)
+        return 'index'
+
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+## confige file
+    # dialect+driver://username:password@host:port/database
+    DIALECT = 'mysql'
+    DRIVER = 'mysqldb'
+    USERNAME = 'root'
+    PASSWORD = '645018@hzzj'
+    HOST = '127.0.0.1'
+    PORT = '3306'
+    DATABASE ='db_demo1'
+    SQLALCHEMY_DATABASE_URI ='{}+{}://{}:{}@{}:{}/{}?charset=utf8'.format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST, PORT, DATABASE)
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
