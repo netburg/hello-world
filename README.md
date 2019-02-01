@@ -556,3 +556,81 @@ Design a program that print:
     SQLALCHEMY_DATABASE_URI ='{}+{}://{}:{}@{}:{}/{}?charset=utf8'.format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST, PORT, DATABASE)
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+## Foreign Key
+    from flask import Flask
+    from flask_sqlalchemy import SQLAlchemy
+    import config
+
+    app = Flask('__name__')
+    app.config.from_object(config)
+    db = SQLAlchemy(app)
+    # #user
+    # create table users(
+    #     id int primary key autoincrement,
+    #     username varchar(100) not null)
+    # # article
+    # create table article(
+    #     id int primary key autoincrement,
+    #     title varchar(100) not null
+    #     content text not null,
+    #     author_id int,
+    #     foreign key `author_id` references `users.id`
+    # )
+    # create table article(
+    #     id int primary key autoincrement,
+    #     title varchar(100) not null,
+    #     content text not null)
+    class User(db.Model):
+        __tablename__= 'user'
+        id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+        username = db.Column(db.String(100), nullable=False)
+    class Article(db.Model):
+        __tablename__='article'
+        id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+        title = db.Column(db.String(100), nullable=False)
+        content = db.Column(db.Text, nullable=False)
+        author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+        author = db.relationship('User',backref=db.backref('articles'))
+    db.create_all()
+
+
+    @app.route('/')
+    def index():
+        # article1=Article(title='ITSinger', content='I am Singer0001')
+        # db.session.add(article1)
+        # db.session.commit()
+        # article11 = Article.query.filter(Article.title=='ITSinger').first()
+        # print('title: %s' % article11.title)
+        # print('content: %s' % article11.content)
+        # article1=Article.query.filter(Article.title=='ITSinger').first()
+        # article1.title='Dancer'
+        # db.session.commit()
+        # article1=Article.query.filter(Article.title=='Dancer').first()
+        # db.session.delete(article1)
+        # db.session.commit()
+        # SQL
+        #添加一篇文章，先添加用户
+        # user1 = User(username='Jim')
+        # db.session.add(user1)
+        # db.session.commit()
+        #
+        # article1 = Article(title='AAA', content='BBB', author_id=1)
+        # db.session.add(article1)
+        # db.session.commit()
+        # article2 = Article(title='aaa', content='bbb')
+        # article2.author = User.query.filter(User.id==1).first()
+        # db.session.add(article2)
+        # db.session.commit()
+        # article = Article.query.filter(Article.title=='AAA').first()
+        # print('username: %s'%article.author.username)
+        user=User.query.filter(User.username=='Jim').first()
+        result=user.articles
+        for article in result:
+            print('-'*10)
+            print(article.title)
+        return 'index'
+
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+
