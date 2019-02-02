@@ -649,3 +649,19 @@ Design a program that print:
     def migrate():
         print('Successfully migrate tables！')
 
+## manage.py
+    from flask_script import Manager
+    from itsinger import app
+    from db_scripts import DBManager
+    manager = Manager(app)
+
+
+    @manager.command
+    def runserver():
+        print('The server is on!!!')
+
+
+    manager.add_command('db',DBManager)
+
+    if __name__=='__main__':
+        manager.run()
