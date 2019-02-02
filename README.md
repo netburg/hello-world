@@ -634,3 +634,18 @@ Design a program that print:
     if __name__ == '__main__':
         app.run(debug=True)
 
+# 2/2/2019
+## Database init and tables migrate
+## db_scripts.py
+    from flask_script import Manager
+
+    DBManager = Manager()
+
+    @DBManager.command
+    def init():
+        print('Successfully init database！')
+
+    @DBManager.command
+    def migrate():
+        print('Successfully migrate tables！')
+
