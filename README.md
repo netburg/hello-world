@@ -712,3 +712,30 @@ Design a program that print:
                 </li>
             {% endfor %}
     </body>
+## get and post method
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <form action="{{url_for('login')}}" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td>用户名：</td>
+                    <td><input type="text" placeholder="请输入用户名"></td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td><input type="text" placeholder="请输入密码"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="登录"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    </body>
+    </html>
