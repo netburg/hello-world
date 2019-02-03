@@ -763,3 +763,43 @@ Design a program that print:
 
     if __name__ == '__main__':
         app.run(debug=True)
+# 04/02/2019
+## before_request
+    from flask import Flask,render_template,request,session,redirect,url_for,g
+    import os
+
+    app = Flask(__name__)
+    app.config['SECRET KEY'] = os.urandom(24)
+
+    @app.route('/')
+    def index():
+        print('index')
+        return 'This is index!'
+
+    @app.route('/login/',methods=['GET','POST'])
+    def login():
+        print('login')
+        if request.method == 'GET':
+            return render_template('login.html')
+        else:
+            username = request.form.get('username')
+            password = request.form.get('password')
+            if username == 'Jim' and password == '123456':
+                session['username']='Jim'
+                return 'Login successfully!'
+            else:
+                return 'Invalid username or password!'
+
+    @app.route('/edit/')
+    def edit():
+        if hasattr(g,'username'):
+            return 'Edit successfully!'
+        else:
+            return redirect(url_for('login'))
+
+    @app.before_request
+    def my_before_request():
+        if session.get('username'):
+            g.username = session.get('username')
+        else:
+            pass
