@@ -665,3 +665,30 @@ Design a program that print:
 
     if __name__=='__main__':
         manager.run()
+## session and cookie
+    from flask import Flask,session
+    import os
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = os.urandom(24)
+    @app.route('/')
+    def index():
+        session['username']='Jim'
+        return 'index'
+    @app.route('/get/')
+    def get():
+        return session.get('username')
+    @app.route('/delete/')
+    def delete():
+        print(session.get('username'))
+        session.pop('username')
+        print(session.get('username'))
+        return 'delete success'
+
+    @app.route('/clear/')
+    def clear():
+        print(session.get('username'))
+        session.clear()
+        print(session.get('username'))
+        return 'OKld'
+    if __name__ == '__main__':
+        app.run(debug=True)
