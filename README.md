@@ -769,7 +769,7 @@ Design a program that print:
     import os
 
     app = Flask(__name__)
-    app.config['SECRET KEY'] = os.urandom(24)
+    app.config['SECRET_KEY'] = os.urandom(24)
 
     @app.route('/')
     def index():
@@ -803,6 +803,9 @@ Design a program that print:
             g.username = session.get('username')
         else:
             pass
+
+    if __name__ == '__main__':
+        app.run()
 ## before_request:front side
     <!DOCTYPE html>
     <html lang="en">
