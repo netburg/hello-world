@@ -693,3 +693,22 @@ Design a program that print:
         return 'OKld'
     if __name__ == '__main__':
         app.run(debug=True)
+## static files
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Index</title>
+    </head>
+    <body>
+        <img src="{{myimage|default('https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1456128855,663055519&fm=58') }}", alt="">
+        <hr>
+        <p>Comments：（{{ comments|length}}）</p>
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <a href="#">{{comment.username}}</a>
+                    <p>{{comment.content}}</p>
+                </li>
+            {% endfor %}
+    </body>
