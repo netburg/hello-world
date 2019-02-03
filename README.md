@@ -803,3 +803,29 @@ Design a program that print:
             g.username = session.get('username')
         else:
             pass
+## before_request:front side
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Index Page</title>
+    </head>
+    <body>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <td>USERNAME：</td>
+                <td><input type="text" placeholder="Please input your username" name="username"></td>
+            </tr>
+            <tr>
+                <td>PASSWORD：</td>
+                <td><input type="password" placeholder="Please input your password" name="password"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Login"></td>
+            </tr>
+        </table>
+    </form>
+    </body>
+    </html>
