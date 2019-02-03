@@ -665,6 +665,7 @@ Design a program that print:
 
     if __name__=='__main__':
         manager.run()
+# 03/02/2019
 ## session and cookie
     from flask import Flask,session
     import os
