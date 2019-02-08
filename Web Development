@@ -1,0 +1,477 @@
+# 26/01/2019 Web Deveopment
+## Case 1 Hello world
+    from flask import Flask
+
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():
+        return 'Hello, World!'
+
+    if __name__ =='__main__':
+        app.run(debug=True, host='0.0.0.0', port=5000)
+## Template
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        {%if title%}
+        <title>{{title}}</title>
+        {% else %}
+        <title>Singer</title>
+        {% endif %}
+    </head>
+    <body>
+        {% include 'navbar.html'%}
+        {% block content %}
+        {% endblock %}
+    </body>
+    </html>
+# 28/01/2019
+## URL and parameters
+    @app.route('/article/<id>')
+    def article(id):
+        return 'The parameter you request is: s%' %id
+## reverse URL and redirect
+    from flask impoort Flask, redirec, url_for
+    app = Flask(__name__)
+    
+    @app.route('/')
+    def index():
+        login_url = url_for('login')
+        return redirect(login_url)
+        return 'This is homepage.'
+        
+    @app.route('/login/')
+    def login():
+        return 'This is login page.'
+## test for redirect
+    @app.route('/question/<is_login>/')
+    def question(is_login):
+        if is_login == '1'
+            return 'This is publishing page.'
+        else:
+            return redirect(url_for('login'))
+# 29/01/2019
+## IF statement in Web
+    from flask import Flask, render_template
+    app = Flask('__name__')
+    @app.route('/<is_login>')
+    def index(is_login):
+        if login == '1':
+            user = {'username': Jim, 'age': 28, }
+            return render_template('index.html', user = user )
+        else:
+            return render_template('index.html')
+    if __name__= '__main__':
+        app.run(debug=True)
+## The  'index.html' involved
+    <!DOCTYPE html>
+    <html lang='en'>
+    <head>
+         <meta charset="UTF-8">
+         <title>Exercise</title>
+    </head>
+    <body>
+        {% if user%}
+            {% <a href="#"> {{user.username}} </a> %}
+            {% <a href="#"> Logout </a> %}
+        {% else %}
+            {% <a href="#"> Login </a> %}
+            {% <a href="#"> Sign up </a> %}
+        {% ednif %}
+    </body>
+    
+    </html>
+# 30/01/2019    
+## filter
+    from flask import Flask, render_template
+
+    app = Flask('__name__')
+
+
+    @app.route('/')
+    def index():
+        comments=[{'username': 'Jin', 'content': 'Very good.'}, {'username': 'Jim', 'content': 'Not bad.'}]
+        myimage='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'
+        return render_template('index.html', comments=comments, myimage=myimage)
+
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+        
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>过滤器</title>
+    </head>
+    <body>
+        <img src="{{myimage|default('https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1456128855,663055519&fm=58') }}", alt="">
+        <hr>
+        <p>评论数：（{{ comments|length}}）</p>
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <a href="#">{{comment.username}}</a>
+                    <p>{{comment.content}}</p>
+                </li>
+            {% endfor %}
+    </body>
+    </html>
+# 31/01/2019
+## MYSQL: add data
+    from flask import Flask
+    from flask_sqlalchemy import SQLAlchemy
+    import config
+
+    app = Flask('__name__')
+    db = SQLAlchemy(app)
+    app.config.from_object(config)
+
+    # create table article(
+    #     id int primary key autoincrement,
+    #     title varchar(100) not null,
+    #     content text not null,
+    # )
+
+    class Article(db.Model):
+        __tablename__='article'
+        id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+        title = db.Column(db.String(100), nullable=False)
+        content = db.Column(db.Text, nullable=False)
+    db.create_all()
+
+    @app.route('/')
+    def index():
+        article1=Article(title='ITSinger', content='I am Singer0001')
+        db.session.add(article1)
+        db.session.commit()
+        return 'index'
+## Query
+    from flask import Flask
+    from flask_sqlalchemy import SQLAlchemy
+    import config
+
+    app = Flask('__name__')
+    db = SQLAlchemy(app)
+    app.config.from_object(config)
+
+    class Article(db.Model):
+        __tablename__='article'
+        id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+        title = db.Column(db.String(100), nullable=False)
+        content = db.Column(db.Text, nullable=False)
+    db.create_all()
+
+    @app.route('/')
+    def index():
+
+        article11 = Article.query.filter(Article.title=='ITSinger').first()
+        print('title: %s' % article11.title)
+        print('content: %s' % article11.content)
+        return 'index'
+
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+## Confige.py
+    # dialect+driver://username:password@host:port/database
+    DIALECT = 'mysql'
+    DRIVER = 'mysqldb'
+    USERNAME = 'root'
+    PASSWORD = '645018@hzzj'
+    HOST = '127.0.0.1'
+    PORT = '3306'
+    DATABASE ='db_demo1'
+    SQLALCHEMY_DATABASE_URI ='{}+{}://{}:{}@{}:{}/{}?charset=utf8'.format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST, PORT, DATABASE)
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+## Foreign Key
+    from flask import Flask
+    from flask_sqlalchemy import SQLAlchemy
+    import config
+
+    app = Flask('__name__')
+    app.config.from_object(config)
+    db = SQLAlchemy(app)
+    # #user
+    # create table users(
+    #     id int primary key autoincrement,
+    #     username varchar(100) not null)
+    # # article
+    # create table article(
+    #     id int primary key autoincrement,
+    #     title varchar(100) not null
+    #     content text not null,
+    #     author_id int,
+    #     foreign key `author_id` references `users.id`
+    # )
+    # create table article(
+    #     id int primary key autoincrement,
+    #     title varchar(100) not null,
+    #     content text not null)
+    class User(db.Model):
+        __tablename__= 'user'
+        id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+        username = db.Column(db.String(100), nullable=False)
+    class Article(db.Model):
+        __tablename__='article'
+        id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+        title = db.Column(db.String(100), nullable=False)
+        content = db.Column(db.Text, nullable=False)
+        author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+        author = db.relationship('User',backref=db.backref('articles'))
+    db.create_all()
+
+
+    @app.route('/')
+    def index():
+        # article1=Article(title='ITSinger', content='I am Singer0001')
+        # db.session.add(article1)
+        # db.session.commit()
+        # article11 = Article.query.filter(Article.title=='ITSinger').first()
+        # print('title: %s' % article11.title)
+        # print('content: %s' % article11.content)
+        # article1=Article.query.filter(Article.title=='ITSinger').first()
+        # article1.title='Dancer'
+        # db.session.commit()
+        # article1=Article.query.filter(Article.title=='Dancer').first()
+        # db.session.delete(article1)
+        # db.session.commit()
+        # SQL
+        #添加一篇文章，先添加用户
+        # user1 = User(username='Jim')
+        # db.session.add(user1)
+        # db.session.commit()
+        #
+        # article1 = Article(title='AAA', content='BBB', author_id=1)
+        # db.session.add(article1)
+        # db.session.commit()
+        # article2 = Article(title='aaa', content='bbb')
+        # article2.author = User.query.filter(User.id==1).first()
+        # db.session.add(article2)
+        # db.session.commit()
+        # article = Article.query.filter(Article.title=='AAA').first()
+        # print('username: %s'%article.author.username)
+        user=User.query.filter(User.username=='Jim').first()
+        result=user.articles
+        for article in result:
+            print('-'*10)
+            print(article.title)
+        return 'index'
+
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+
+# 2/2/2019
+## Database init and tables migrate
+## db_scripts.py
+    from flask_script import Manager
+
+    DBManager = Manager()
+
+    @DBManager.command
+    def init():
+        print('Successfully init database！')
+
+    @DBManager.command
+    def migrate():
+        print('Successfully migrate tables！')
+
+## manage.py
+    from flask_script import Manager
+    from itsinger import app
+    from db_scripts import DBManager
+    manager = Manager(app)
+
+
+    @manager.command
+    def runserver():
+        print('The server is on!!!')
+
+
+    manager.add_command('db',DBManager)
+
+    if __name__=='__main__':
+        manager.run()
+# 03/02/2019
+## session and cookie
+    from flask import Flask,session
+    import os
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = os.urandom(24)
+    @app.route('/')
+    def index():
+        session['username']='Jim'
+        return 'index'
+    @app.route('/get/')
+    def get():
+        return session.get('username')
+    @app.route('/delete/')
+    def delete():
+        print(session.get('username'))
+        session.pop('username')
+        print(session.get('username'))
+        return 'delete success'
+
+    @app.route('/clear/')
+    def clear():
+        print(session.get('username'))
+        session.clear()
+        print(session.get('username'))
+        return 'OKld'
+    if __name__ == '__main__':
+        app.run(debug=True)
+## static files
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Index</title>
+    </head>
+    <body>
+        <img src="{{myimage|default('https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1456128855,663055519&fm=58') }}", alt="">
+        <hr>
+        <p>Comments：（{{ comments|length}}）</p>
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <a href="#">{{comment.username}}</a>
+                    <p>{{comment.content}}</p>
+                </li>
+            {% endfor %}
+    </body>
+## get and post method
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <form action="{{url_for('login')}}" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td>用户名：</td>
+                    <td><input type="text" placeholder="请输入用户名"></td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td><input type="text" placeholder="请输入密码"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="登录"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    </body>
+    </html>
+## main py    
+    from flask import Flask,render_template,request
+    app = Flask(__name__)
+    @app.route('/')
+    def index():
+        return render_template('index.html')
+    @app.route('/search/')
+    def search():
+        q=request.args.get('q')
+        return 'User request is: %s'%q
+    @app.route('/login/',methods=['GET','POST'])
+    def login():
+        if request.method =='GET':
+            return render_template('login.html')
+        else:
+            username=request.form.get('username')
+            password=request.form.get('password')
+            print('username:',username)
+            print('password:',password)
+            return 'post request'
+
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+# 04/02/2019
+## before_request
+    from flask import Flask,render_template,request,session,redirect,url_for,g
+    import os
+
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = os.urandom(24)
+
+    @app.route('/')
+    def index():
+        print('index')
+        return 'This is index!'
+
+    @app.route('/login/',methods=['GET','POST'])
+    def login():
+        print('login')
+        if request.method == 'GET':
+            return render_template('login.html')
+        else:
+            username = request.form.get('username')
+            password = request.form.get('password')
+            if username == 'Jim' and password == '123456':
+                session['username']='Jim'
+                return 'Login successfully!'
+            else:
+                return 'Invalid username or password!'
+
+    @app.route('/edit/')
+    def edit():
+        if hasattr(g,'username'):
+            return 'Edit successfully!'
+        else:
+            return redirect(url_for('login'))
+
+    @app.before_request
+    def my_before_request():
+        if session.get('username'):
+            g.username = session.get('username')
+        else:
+            pass
+
+    if __name__ == '__main__':
+        app.run()
+## before_request:front side
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Index Page</title>
+    </head>
+    <body>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <td>USERNAME：</td>
+                <td><input type="text" placeholder="Please input your username" name="username"></td>
+            </tr>
+            <tr>
+                <td>PASSWORD：</td>
+                <td><input type="password" placeholder="Please input your password" name="password"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Login"></td>
+            </tr>
+        </table>
+    </form>
+    </body>
+    </html>
+## MySQL config file
+    #dialect+driver://username:password@host:port/database
+    DIALECT = 'mysql'
+    DRIVER = 'pymysql'
+    USERNAME = 'root'
+    PASSWORD = '645018@hzzj'
+    HOST = '127.0.0.1'
+    PORT = '3306'
+    DATABASE ='db_demo'
+    SQLALCHEMY_DATABASE_URI ='{}+{}://{}:{}@{}:{}/{}?charset=utf8'.format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST, PORT, DATABASE)
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
