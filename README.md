@@ -31,7 +31,7 @@ Design a program: randomize an integer from 1 to 10, and let users guess what it
     temp2 = int(input("Please input an integer between 1 and 10, you have 3 chances:"))     
     i=3     
     while i:   
-        if temp1==temp2:   
+        if temp1==temp2:    
             print("Good Luck You!")   
             i=0   
         else:   
